@@ -1,4 +1,4 @@
-import { SwatchBook } from "lucide-react";
+import { Mail, SwatchBook } from "lucide-react";
 import type { FC } from "react";
 import { GitHubIcon, LinkedInIcon, XIcon } from "../icons";
 
@@ -14,7 +14,8 @@ const Header: FC = () => {
 				<GitHubIcon className={IconClassName} />
 				<XIcon className={IconClassName} />
 				<LinkedInIcon className={IconClassName} />
-				<SwatchBook className={IconClassName} />
+				<Mail className={IconClassName} strokeWidth={1.5} />
+				<SwatchBook className={IconClassName} strokeWidth={1.5} />
 			</div>
 		</header>
 	);
