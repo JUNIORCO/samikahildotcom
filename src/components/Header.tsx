@@ -8,14 +8,14 @@ const Header: FC = () => {
 	return (
 		<header
 			id="header"
-			className="sticky top-0 z-50 bg-neutral-50 sm:w-[50%] w-full sm:h-24 h-16 shadow-md rounded-full content-center self-center"
+			className="bg-neutral-50 sm:w-[50%] w-full sm:h-24 h-16 shadow-md rounded-full content-center self-center"
 		>
 			<div className="py-4 px-6 flex justify-center gap-8 sm:gap-16 items-center">
 				<GitHubIcon className={IconClassName} />
 				<XIcon className={IconClassName} />
 				<LinkedInIcon className={IconClassName} />
-				<Mail className={IconClassName} strokeWidth={1.5} />
-				<SwatchBook className={IconClassName} strokeWidth={1.5} />
+				<Mail className={IconClassName} />
+				<SwatchBook className={IconClassName} />
 			</div>
 		</header>
 	);
