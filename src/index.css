@@ -48,4 +48,8 @@
     ul {
         @apply list-disc list-inside;
     }
+
+    summary {
+        @apply hover:cursor-pointer;
+    }
 }
