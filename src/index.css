@@ -4,11 +4,41 @@
 
 @layer base {
     body {
-        @apply bg-neutral-100 dark:bg-neutral-900;
+        @apply bg-neutral-50 dark:bg-neutral-900;
     }
 
     p, li, a, summary, button {
-        @apply text-neutral-900 dark:text-neutral-100;
+        @apply text-neutral-900 dark:text-neutral-50;
+    }
+
+    blockquote {
+        @apply text-neutral-700 dark:text-neutral-300;
+    }
+    
+    button:focus {
+        @apply outline-none;
+    }
+
+    button:focus-visible {
+        @apply outline-none;
+    }
+
+    select {
+        @apply bg-neutral-50 text-neutral-900 hover:cursor-pointer;
+        @apply dark:bg-neutral-900 dark:text-neutral-50;
+    }
+
+    select:focus {
+        @apply outline-none;
+    }
+
+    select:focus-visible {
+        @apply outline-none;
+    }
+
+    select option {
+        @apply bg-neutral-50 text-neutral-900;
+        @apply dark:bg-neutral-900 dark:text-neutral-50;
     }
 
     a {

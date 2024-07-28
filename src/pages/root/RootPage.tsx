@@ -117,7 +117,7 @@ function RootPage() {
           <div>
             <ul className="ml-4 mb-1">
               <li>
-                <Link to={ROUTES.essay1}>Essay 1</Link>
+                <Link to={ROUTES.essay1}>Tradition & Government</Link>
               </li>
             </ul>
             <Link to={ROUTES.essays}>View all</Link>

@@ -8,13 +8,13 @@ const Section: FC<{
   children: ReactNode;
 }> = ({ title, subtitle, containerClassName, dividerClassName, children }) => {
   return (
-    <div className={`flex flex-col ${containerClassName}`}>
+    <div className={`flex flex-col ${containerClassName ?? ""}`}>
       <div className="flex justify-between">
         <p className="font-medium text-lg">{title}</p>
         <p>{subtitle}</p>
       </div>
       <hr
-        className={`border-t-4 border-gray-300 dark:border-gray-500 mb-2 w-20 ${dividerClassName}`}
+        className={`border-t-4 border-gray-300 dark:border-gray-500 mb-2 w-20 ${dividerClassName ?? ""}`}
       />
       {children}
     </div>

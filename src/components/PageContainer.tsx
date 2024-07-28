@@ -8,11 +8,23 @@ const PageContainer = () => {
     dark = "dark",
   }
   const themeKey = "theme";
+  const fontKey = "font";
   const initialTheme = localStorage.getItem(themeKey) === Themes.dark;
+  const initialFont = localStorage.getItem(fontKey) || "Times New Roman";
   const [isDarkMode, setIsDarkMode] = useState<boolean>(initialTheme);
+
+  const fonts = ["Times", "Arial", "Georgia", "Verdana"];
+  const initialFontIndex = fonts.indexOf(initialFont);
+  const [fontIndex, setFontIndex] = useState<number>(initialFontIndex);
 
   const handleThemeSwitch = () => {
     setIsDarkMode((prev) => !prev);
+  };
+
+  const handleFontChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const newFontIndex = fonts.indexOf(event.target.value);
+    setFontIndex(newFontIndex);
+    localStorage.setItem(fontKey, fonts[newFontIndex]);
   };
 
   const onMount = () => {
@@ -37,6 +49,10 @@ const PageContainer = () => {
     localStorage.setItem(themeKey, isDarkMode ? Themes.dark : Themes.light);
   };
   useEffect(onThemeChange, [isDarkMode]);
+
+  useEffect(() => {
+    document.documentElement.style.fontFamily = fonts[fontIndex];
+  }, [fontIndex]);
 
   return (
     <div className="flex justify-center">
@@ -71,13 +87,19 @@ const PageContainer = () => {
             LinkedIn
           </a>
         </Section>
-        <button
-          type="button"
-          onClick={handleThemeSwitch}
-          className="w-fit mt-6"
-        >
-          {isDarkMode ? "Light" : "Dark"} Mode
-        </button>
+        <div className="flex justify-between mt-6">
+          <button type="button" onClick={handleThemeSwitch}>
+            {isDarkMode ? "Light" : "Dark"} Mode
+          </button>
+          <p className="font-satisfy text-lg select-none">junior</p>
+          <select value={fonts[fontIndex]} onChange={handleFontChange}>
+            {fonts.map((font) => (
+              <option key={font} value={font}>
+                {font}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
     </div>
   );
