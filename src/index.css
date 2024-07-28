@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    font-size: 13px;
-    @screen md {
-        font-size: 15px;
-    }
-    @screen lg {
-        font-size: 17px;
-    }
-}
-
 @layer base {
     body {
         @apply bg-neutral-100 dark:bg-neutral-900;
