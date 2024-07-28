@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PageContainer from "./components/PageContainer";
+import NotFoundPage from "./pages/NotFoundPage";
 import Essay1Page from "./pages/essay/Essay1Page";
 import EssaysPage from "./pages/essays/EssaysPage";
 import RootPage from "./pages/root/RootPage";
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route index element={<RootPage />} />
           <Route path={ROUTES.essays} element={<EssaysPage />} />
           <Route path={ROUTES.essay1} element={<Essay1Page />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -5,25 +5,25 @@ import Section from "../../components/Section";
 import ROUTES from "../../routes";
 
 function EssaysPage() {
-	return (
-		<React.Fragment>
-			<Breadcrumb
-				links={[
-					{
-						label: "Home",
-						to: ROUTES.root,
-					},
-				]}
-			/>
-			<Section title="Essays">
-				<ul className="ml-4 mb-1">
-					<li>
-						<Link to={ROUTES.essay1}>Essay 1</Link>
-					</li>
-				</ul>
-			</Section>
-		</React.Fragment>
-	);
+  return (
+    <React.Fragment>
+      <Breadcrumb
+        links={[
+          {
+            label: "Home",
+            to: ROUTES.root,
+          },
+        ]}
+      />
+      <Section title="Essays">
+        <ul className="ml-4 mb-1">
+          <li>
+            <Link to={ROUTES.essay1}>Essay 1</Link>
+          </li>
+        </ul>
+      </Section>
+    </React.Fragment>
+  );
 }
 
 export default EssaysPage;
