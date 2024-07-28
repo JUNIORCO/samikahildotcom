@@ -9,15 +9,15 @@ import RootPage from "./pages/root/RootPage";
 import ROUTES from "./routes";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-	<React.StrictMode>
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<PageContainer />}>
-					<Route index element={<RootPage />} />
-					<Route path={ROUTES.essays} element={<EssaysPage />} />
-					<Route path={ROUTES.essay1} element={<Essay1Page />} />
-				</Route>
-			</Routes>
-		</BrowserRouter>
-	</React.StrictMode>,
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path={ROUTES.root} element={<PageContainer />}>
+          <Route index element={<RootPage />} />
+          <Route path={ROUTES.essays} element={<EssaysPage />} />
+          <Route path={ROUTES.essay1} element={<Essay1Page />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>,
 );
