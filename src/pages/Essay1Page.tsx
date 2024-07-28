@@ -1,8 +1,8 @@
 import React from "react";
-import Breadcrumb from "../../components/Breadcrumb";
-import Quote from "../../components/Quote";
-import Section from "../../components/Section";
-import ROUTES from "../../routes";
+import Breadcrumb from "../components/Breadcrumb";
+import Quote from "../components/Quote";
+import Section from "../components/Section";
+import ROUTES from "../routes";
 
 function Essay1Page() {
   return (

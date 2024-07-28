@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Section from "../../components/Section";
-import ROUTES from "../../routes";
+import Section from "../components/Section";
+import ROUTES from "../routes";
 
 function RootPage() {
   return (
@@ -88,7 +88,7 @@ function RootPage() {
             </ul>
           </div>
           <details>
-            <summary>2021 & before</summary>
+            <summary className="w-fit">2021 & before</summary>
             <ul className="ml-4">
               <li>Tried a startup in my senior year</li>
               <li>

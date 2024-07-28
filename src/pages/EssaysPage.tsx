@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Breadcrumb from "../../components/Breadcrumb";
-import Section from "../../components/Section";
-import ROUTES from "../../routes";
+import Breadcrumb from "../components/Breadcrumb";
+import Section from "../components/Section";
+import ROUTES from "../routes";
 
 function EssaysPage() {
   return (
