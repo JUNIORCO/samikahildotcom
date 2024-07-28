@@ -1,0 +1,10 @@
+{
+  "files.autoSave": "onFocusChange",
+  "files.autoSaveDelay": 100,
+  "editor.formatOnSave": true,
+  "editor.linkedEditing": true,
+  "explorer.confirmDragAndDrop": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.tree.indent": 16,
+  "editor.tabSize": 2
+}
