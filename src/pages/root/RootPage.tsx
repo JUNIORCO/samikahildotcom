@@ -20,9 +20,17 @@ function RootPage() {
 									rel="noreferrer"
 								>
 									MonteloAI
+								</a>{" "}
+								and{" "}
+								<a
+									href="https://getpeachpod.com/"
+									target="_blank"
+									rel="noreferrer"
+								>
+									Peach
 								</a>
-								, almost got into YC
 							</li>
+							<li>Applied twice to YC, interviewed twice, failed twice</li>
 						</ul>
 					</div>
 					<div>
