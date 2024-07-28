@@ -13,13 +13,17 @@ html {
 }
 
 @layer base {
-    a {
-        @apply underline;
+    body {
+        @apply bg-neutral-100 dark:bg-neutral-900;
     }
 
-    a:visited {
-        @apply text-blue-600;
+    p, li, a, summary, button {
+        @apply text-neutral-900 dark:text-neutral-100;
     }
+
+    a {
+        @apply underline;
+     }
 
     ul {
         @apply list-disc list-inside;
