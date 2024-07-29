@@ -57,7 +57,9 @@ const PageContainer = () => {
   return (
     <div className="flex justify-center">
       <div className="w-[42em] my-8 mx-4 justify-center items-center">
-        <p className="text-lg font-medium mb-1">Sami Junior Kahil</p>
+        <p className="text-lg font-medium mb-1 justify-end">
+          Sami Junior Kahil
+        </p>
         <Outlet />
         <Section title="Links" containerClassName="mt-6">
           <a href="mailto:sami.juniorco@gmail.com" className="w-fit">

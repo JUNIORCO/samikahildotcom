@@ -18,7 +18,9 @@ function EssaysPage() {
       <Section title="Essays">
         <ul className="ml-4 mb-1">
           <li>
-            <Link to={ROUTES.essay1}>On Tradition</Link>
+            <Link to={ROUTES.essay1}>
+              Government Language From First Principles
+            </Link>
           </li>
         </ul>
       </Section>

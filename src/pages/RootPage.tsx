@@ -24,7 +24,7 @@ function RootPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Peach
+                Peach.
               </a>
             </li>
             <li>Applied twice to YC, interviewed twice, failed twice</li>
@@ -64,7 +64,7 @@ function RootPage() {
               <a href="https://www.mcgill.ca/" target="_blank" rel="noreferrer">
                 McGill
               </a>{" "}
-              with a degree in Software Engineering, 2022
+              with a degree in Software Engineering
             </li>
           </ul>
         </div>
@@ -98,7 +98,9 @@ function RootPage() {
         <div>
           <ul className="ml-4 mb-1">
             <li>
-              <Link to={ROUTES.essay1}>On Tradition</Link>
+              <Link to={ROUTES.essay1}>
+                Government Language From First Principles
+              </Link>
             </li>
           </ul>
           <Link to={ROUTES.essays}>View all</Link>
