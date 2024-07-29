@@ -12,6 +12,17 @@ const Section: FC<{
   const [dividerWidth, setDividerWidth] = useState<number>(20);
 
   const getDividerWidthClass = (width: number) => {
+    if (typeof window !== "undefined" && window.innerWidth <= 768) {
+      // Mobile breakpoint
+      if (width <= 64) return "w-16";
+      if (width <= 80) return "w-20";
+      if (width <= 96) return "w-24";
+      if (width <= 128) return "w-32";
+      if (width <= 160) return "w-40";
+      if (width <= 192) return "w-48";
+      return "w-56";
+    }
+    // Desktop
     if (width <= 80) return "w-20";
     if (width <= 96) return "w-24";
     if (width <= 128) return "w-32";
@@ -33,11 +44,11 @@ const Section: FC<{
 
   return (
     <div className={`flex flex-col ${containerClassName ?? ""}`}>
-      <div className="flex justify-between">
-        <p ref={titleRef} className="font-medium text-lg">
+      <div className="flex justify-between gap-4 items-center">
+        <p ref={titleRef} className="font-medium text-lg leading-tight">
           {title}
         </p>
-        <p>{subtitle}</p>
+        {subtitle && <p className="whitespace-nowrap">{subtitle}</p>}
       </div>
       <hr
         className={`border-t-4 border-stone-300 dark:border-stone-500 mb-2 ${getDividerWidthClass(dividerWidth)} ${dividerClassName ?? ""}`}
