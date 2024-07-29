@@ -9,9 +9,10 @@ import ROUTES from "../routes";
 
 function Essay1Page() {
   const title = "Government Language From First Principles";
-  const descartesQuote =
-    "I must once for all seriously undertake to rid myself of all the opinions in which I had formerly accepted, and commence to build anew from the foundation, if I wanted to establish any firm and permanent structure in the sciences.";
-  useDocumentMeta(title, descartesQuote);
+  useDocumentMeta(
+    title,
+    "It is now some years since I read Meditations on First Philosophy, but the current trend of thinking in first principles - the practice of breaking down complex problems to their most fundamental truths - led me to revisit Descartes' work. In his book of short essays was the first attempt at systematically questioning and dismantling prior beliefs to rebuild knowledge from the ground up. That gives him a nomination for father of first principles thinking.",
+  );
 
   return (
     <React.Fragment>
@@ -29,7 +30,7 @@ function Essay1Page() {
       />
       <Section title={title} subtitle="July 28, 2024" dividerClassName="mb-8">
         <Quote
-          text={descartesQuote}
+          text="I must once for all seriously undertake to rid myself of all the opinions in which I had formerly accepted, and commence to build anew from the foundation, if I wanted to establish any firm and permanent structure in the sciences."
           author="Descartes"
           source="Meditations on First Philosophy"
           year={1641}
