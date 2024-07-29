@@ -20,7 +20,7 @@ function Essay1Page() {
         ]}
       />
       <Section
-        title="Tradition & Government"
+        title="On Tradition"
         subtitle="July 28, 2024"
         dividerClassName="w-52 mb-8"
       >
