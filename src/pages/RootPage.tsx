@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import Section from "../components/Section";
+import useDocumentMeta from "../hooks/useDocumentMeta";
 import ROUTES from "../routes";
 
 function RootPage() {
+  useDocumentMeta("Sami Junior Kahil", "Sami's personal website.");
+
   return (
     <div className="flex flex-col m-auto p-auto gap-6">
       <Section title="Essays">

@@ -4,9 +4,15 @@ import { Footnote } from "../components/Footnote";
 import { FootnoteReference } from "../components/FootnoteReference";
 import Quote from "../components/Quote";
 import Section from "../components/Section";
+import useDocumentMeta from "../hooks/useDocumentMeta";
 import ROUTES from "../routes";
 
 function Essay1Page() {
+  const title = "Government Language From First Principles";
+  const descartesQuote =
+    "I must once for all seriously undertake to rid myself of all the opinions in which I had formerly accepted, and commence to build anew from the foundation, if I wanted to establish any firm and permanent structure in the sciences.";
+  useDocumentMeta(title, descartesQuote);
+
   return (
     <React.Fragment>
       <Breadcrumb
@@ -21,13 +27,9 @@ function Essay1Page() {
           },
         ]}
       />
-      <Section
-        title="Government Language From First Principles"
-        subtitle="July 28, 2024"
-        dividerClassName="mb-8"
-      >
+      <Section title={title} subtitle="July 28, 2024" dividerClassName="mb-8">
         <Quote
-          text="I must once for all seriously undertake to rid myself of all the opinions in which I had formerly accepted, and commence to build anew from the foundation, if I wanted to establish any firm and permanent structure in the sciences."
+          text={descartesQuote}
           author="Descartes"
           source="Meditations on First Philosophy"
           year={1641}

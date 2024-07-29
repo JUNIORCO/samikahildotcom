@@ -2,9 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../components/Breadcrumb";
 import Section from "../components/Section";
+import useDocumentMeta from "../hooks/useDocumentMeta";
 import ROUTES from "../routes";
 
 function EssaysPage() {
+  useDocumentMeta("Essays", "A collection of essays.");
+
   return (
     <React.Fragment>
       <Breadcrumb
