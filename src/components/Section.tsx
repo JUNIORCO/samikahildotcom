@@ -14,7 +14,7 @@ const Section: FC<{
         <p>{subtitle}</p>
       </div>
       <hr
-        className={`border-t-4 border-gray-300 dark:border-gray-500 mb-2 w-20 ${dividerClassName ?? ""}`}
+        className={`border-t-4 border-stone-300 dark:border-stone-500 mb-2 w-20 ${dividerClassName ?? ""}`}
       />
       {children}
     </div>

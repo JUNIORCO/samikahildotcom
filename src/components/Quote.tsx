@@ -10,7 +10,7 @@ interface QuoteProps {
 const Quote: FC<QuoteProps> = ({ text, author, source, year }) => {
   return (
     <div className="mb-8">
-      <blockquote className="border-l-4 border-gray-500 pl-4">
+      <blockquote className="border-l-4 border-stone-500 pl-4">
         "{text}"
       </blockquote>
       <blockquote className="text-right">
