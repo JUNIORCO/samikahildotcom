@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
+import theme from "tailwindcss/colors";
 import Section from "./Section";
 
 const PageContainer = () => {
@@ -45,6 +46,12 @@ const PageContainer = () => {
     } else {
       document.documentElement.classList.remove(Themes.dark);
     }
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute(
+        "content",
+        isDarkMode ? theme.stone[900] : theme.stone[100],
+      );
 
     localStorage.setItem(themeKey, isDarkMode ? Themes.dark : Themes.light);
   };
