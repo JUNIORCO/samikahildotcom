@@ -22,7 +22,7 @@ function Essay1Page() {
       <Section
         title="On Tradition"
         subtitle="July 28, 2024"
-        dividerClassName="w-52 mb-8"
+        dividerClassName="w-32 mb-8"
       >
         <Quote
           text="I must once for all seriously undertake to rid myself of all the opinions in which I had formerly accepted, and commence to build anew from the foundation, if I wanted to establish any firm and permanent structure in the sciences."
