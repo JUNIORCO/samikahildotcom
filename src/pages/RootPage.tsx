@@ -5,6 +5,18 @@ import ROUTES from "../routes";
 function RootPage() {
   return (
     <div className="flex flex-col m-auto p-auto gap-6">
+      <Section title="Essays">
+        <div>
+          <ul className="ml-4 mb-1">
+            <li>
+              <Link to={ROUTES.essay1}>
+                Government Language From First Principles
+              </Link>
+            </li>
+          </ul>
+          <Link to={ROUTES.essays}>View all</Link>
+        </div>
+      </Section>
       <Section title="Bio">
         <div>
           <p>2024</p>
@@ -93,18 +105,6 @@ function RootPage() {
             <li>Graduated high school with IB diploma, 2018</li>
           </ul>
         </details>
-      </Section>
-      <Section title="Essays">
-        <div>
-          <ul className="ml-4 mb-1">
-            <li>
-              <Link to={ROUTES.essay1}>
-                Government Language From First Principles
-              </Link>
-            </li>
-          </ul>
-          <Link to={ROUTES.essays}>View all</Link>
-        </div>
       </Section>
     </div>
   );
