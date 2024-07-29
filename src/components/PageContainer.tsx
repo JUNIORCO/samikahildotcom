@@ -46,6 +46,8 @@ const PageContainer = () => {
     } else {
       document.documentElement.classList.remove(Themes.dark);
     }
+
+    // for iOS background color
     document
       .querySelector('meta[name="theme-color"]')
       ?.setAttribute(
