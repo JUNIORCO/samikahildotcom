@@ -12,9 +12,7 @@ function RootPage() {
         <div>
           <ul className="ml-4 mb-1">
             <li>
-              <Link to={ROUTES.essay1}>
-                Government Language From First Principles
-              </Link>
+              <Link to={ROUTES.essay1}>On Government Language</Link>
             </li>
           </ul>
           <Link to={ROUTES.essays}>View all</Link>
