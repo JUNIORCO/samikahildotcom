@@ -40,7 +40,7 @@ function RootPage() {
                 Peach.
               </a>
             </li>
-            <li>Applied twice to YC, interviewed twice, failed twice</li>
+            <li>Applied to YC, interviewed, failed</li>
           </ul>
         </div>
         <div>
@@ -60,6 +60,7 @@ function RootPage() {
                 Rhinestone
               </a>{" "}
             </li>
+            <li>Applied to YC, interviewed, failed</li>
           </ul>
         </div>
         <div>
