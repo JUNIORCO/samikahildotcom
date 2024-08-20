@@ -1,7 +1,6 @@
 import { MathJax } from "better-react-mathjax";
 import React from "react";
 import Breadcrumb from "../components/Breadcrumb";
-import Divider from "../components/Divider";
 import Quote from "../components/Quote";
 import Section from "../components/Section";
 import Subtitle from "../components/Subtitle";
@@ -39,14 +38,6 @@ function FriendAlwaysListening() {
         ]}
       />
       <Section title={title} subtitle="August 21, 2024" dividerClassName="mb-8">
-        <Title>Preface</Title>
-        <p>
-          This is not an attack on Friend or the team behind Friend. This is a
-          technical dive, with the purpose of understanding the economics and
-          engineering behind the always listening feature of Friend.
-        </p>
-        <Divider />
-        <br />
         <p>
           Friend says that their device is always listening. From the website:
         </p>
