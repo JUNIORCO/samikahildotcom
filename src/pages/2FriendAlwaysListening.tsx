@@ -18,7 +18,7 @@ import useDocumentMeta from "../hooks/useDocumentMeta";
 import ROUTES from "../routes";
 
 function FriendAlwaysListening() {
-  const title = "Friend's “Always Listening” Feature is Sketchy";
+  const title = "Friend's “Always Listening”";
   useDocumentMeta(
     title,
     "It could cost as much as $20 per user per year to power always listening for Friend.",
