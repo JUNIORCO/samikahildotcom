@@ -1,6 +1,7 @@
 import { MathJax } from "better-react-mathjax";
 import React from "react";
 import Breadcrumb from "../components/Breadcrumb";
+import InlineLink from "../components/InlineLink";
 import Quote from "../components/Quote";
 import Section from "../components/Section";
 import Subtitle from "../components/Subtitle";
@@ -20,7 +21,7 @@ function FriendAlwaysListening() {
   const title = "Friend's “Always Listening” Feature is Sketchy";
   useDocumentMeta(
     title,
-    "It could cost as much as $20 per user per year to power always listening for Friend.",
+    "Friend says that their device is always listening. From their website: When connected via bluetooth, your friend is always listening and forming their own internal thoughts.",
   );
 
   return (
@@ -39,14 +40,14 @@ function FriendAlwaysListening() {
       />
       <Section title={title} subtitle="August 21, 2024" dividerClassName="mb-8">
         <p>
-          Friend says that their device is always listening. From the website:
+          Friend says that their device is always listening. From their website:
         </p>
         <br />
         <Quote content="When connected via bluetooth, your friend is always listening and forming their own internal thoughts." />
         <p>
           I've worked with transcribing speech into text before, and know first
-          hand that it isn't cheap to do. My first instinct was “damn, must be a
-          strong team to figure out a cheap way to do this at scale”.
+          hand that it isn't a cheap thing to do. My first instinct was “damn,
+          must be a strong team to figure out a cheap way to do this at scale”.
         </p>
         <br />
         <p>
@@ -60,8 +61,9 @@ function FriendAlwaysListening() {
         <p>
           Assume Friend sells 10,000 devices in this initial batch. Each device
           is transcribing 4 hours of audio a day. I believe this is a fair
-          assumption for the initial customer profile of a Friend buyer, as I
-          think they are incapable of engaging in more hours beyond than that.
+          assumption for the initial customer profile of a Friend buyer, given
+          that they are likely incapable of engaging in more hours beyond than
+          that.
         </p>
         <br />
         <p>
@@ -72,15 +74,15 @@ function FriendAlwaysListening() {
         <br />
         <br />
         <Title>Approaches</Title>
-        <p>Let's go through 6 ways to build always listening.</p>
+        <p>Let's go through 5 ways to build always listening.</p>
         <br />
         <br />
         <Subtitle>1. On-Device Transcription</Subtitle>
         <p>
-          Transcription can be done on-device by using a tiny model and only
-          utilizing the CPU. However, given the size of the device and it's
-          price point ($99), one can be sure that there isn't a powerful CPU on
-          board. Therefore, it is highly unlikely that the device can perform
+          Transcription can be done on-device by using a small model and minimal
+          processing power. However, given the size of the device and it's $99
+          price point, it's unlikely to have a powerful processor on board.
+          Therefore, it's highly improbable that the device can perform
           always-on transcription efficiently without draining the battery,
           maintaining a low word error rate, or processing the audio fast
           enough.
@@ -99,9 +101,9 @@ function FriendAlwaysListening() {
           Let's make this fun and also assume that Friend cuts a fantastic
           enterprise deal with Deepgram that brings that cost down by half to
           $0.0018 per minute. At that price, to transcribe 2.4 million minutes
-          per day would cost $4,320 per day, or close to{" "}
-          <span className="font-bold">$1.6M per year</span>. Obviously this
-          cannot work.
+          per day would cost $4,320, or close to{" "}
+          <span className="font-bold">$1.6M per year</span>. Obviously, this
+          cannot be the case.
         </p>
         <br />
         <br />
@@ -171,19 +173,24 @@ function FriendAlwaysListening() {
         </p>
         <br />
         <p>
-          I also wouldn't use smaller models because Friend is expected to be
-          used everywhere you go, even in loud places where the large models
-          work way better.
+          Smaller models might be less resource-intensive, but they also tend to
+          be less accurate, especially in noisy environments. Given that Friend
+          is designed to be used everywhere, both in loud public spaces and
+          quiet private homes, relying on smaller models could lead to
+          significant degradation in transcription quality. Larger models are
+          better equipped to handle background noise, complex audio conditions,
+          and conversations, making them the preferred model choice. You don't
+          want “I'm having falafel” to turn into “I'm having a waffle”.
         </p>
         <br />
         <p>
           The question then is: how many GPUs would be required to run the
           large-v2 model, given 10,000 users each speaking for 4 hours a day,
-          with the audio recorded in 20 minute chunks?
+          with audio recorded in 20 minute chunks?
         </p>
         <br />
         <p>
-          From Run 1, a single GPU can process 20-minute transcriptions per hour{" "}
+          From Run 1, a single GPU can process{" "}
           <MathJax inline>{"\\(\\frac{3,600}{15} = 240\\)"}</MathJax> 20 minute
           chunks per hour.
         </p>
@@ -203,9 +210,9 @@ function FriendAlwaysListening() {
         </p>
         <br />
         <p>
-          Therefore the number of GPUs needed{" "}
-          <MathJax inline>{"\\(= \\frac{5,000}{240} = 21\\)"}</MathJax> GPUs
-          running all the time.
+          Therefore the number of GPUs needed is{" "}
+          <MathJax inline>{"\\(\\frac{5,000}{240} \\approx 21\\)"}</MathJax>{" "}
+          running 24/7.
         </p>
         <br />
         <p>
@@ -214,14 +221,8 @@ function FriendAlwaysListening() {
           <span className="font-bold">$365,000</span> per year. Or, per user,
           that's{" "}
           <span className="font-bold">$36.5 per user in a single year</span>.
-        </p>
-        <br />
-        <p>
-          If the small model from Run 2 were used, it would cost 1/3rd the
-          price; roughly $121,000 per year or ~$12 per user in a single year.
-          But the accuracy takes a big hit, and it could degrade the user
-          experience (“I'm having falafel” could turn into “I'm having a
-          waffle”).
+          Even with a 50% discount, that's still $18.25 per user per year, which
+          isn't sustainable.
         </p>
         <br />
         <br />
@@ -237,45 +238,43 @@ function FriendAlwaysListening() {
         </p>
         <br />
         <p>
-          I ran the large model locally on my MacBook M3 Pro and it took almost
-          5 minutes (300 seconds) to transcribe 20 minutes.
+          To be more specific, I ran the large model locally using Whisper.cpp
+          on my MacBook M3 Pro and it took almost 5 minutes (300 seconds) to
+          transcribe 20 minutes.
         </p>
         <br />
         <p>
-          So a single instance can process{" "}
+          So a single instance of my computer can process{" "}
           <MathJax inline>{"\\(\\frac{3,600}{300} = 12\\)"}</MathJax> 20-minute
           transcriptions per hour.
         </p>
         <br />
         <p>
-          With the same calculations as section 3, then the number of GPUs
-          needed is{" "}
+          With the same calculations as section 3, the number of GPUs needed is{" "}
           <MathJax inline>{"\\(= \\frac{5,000}{12} \\approx 417\\)"}</MathJax>
           {"."}
         </p>
         <br />
         <p>
           Whisper.cpp's docs say that the big model requires roughly 4 GB of
-          memory. The EC2 compute-optimized instance types are in the C-class,
-          and the cheapest one with 8 GB of memory has an hourly rate of just
-          over $0.1 on a 1 year compute savings plan.
+          memory. The cheapest EC2 compute-optimized instance with 8 GB of
+          memory has an hourly rate of just over $0.1 on a 1 year compute
+          savings plan.
         </p>
         <br />
         <p>
-          Let's make it fun and assume that this instance performs at the same
-          level as my Mac Pro. That would still cost{" "}
-          <span className="font-bold">$365,000 per year</span>, which is still
-          not the case and.
+          Again, let's make this fun and assume that this instance performs at
+          the same level as my Mac Pro (it absolutely doesn't). That would be{" "}
+          <span className="font-bold">$365,000 per year</span>, which is similar
+          to the GPU cost. Again, this cannot be the case.
         </p>
         <br />
         <br />
         <Subtitle>5. Transcribe on iPhone</Subtitle>
         <p>
-          I noticed, when writing this essay, an important detail that I missed
-          when I first started with these experiments.
+          When writing this essay I noticed an important detail that I missed.
+          The quote from Friend's website says something important:
         </p>
-        <br />
-        <p>The quote from Friend's website says something important:</p>
         <br />
         <Quote
           content={
@@ -291,18 +290,28 @@ function FriendAlwaysListening() {
         />
         <p>
           Does the always listening feature require a bluetooth connection to
-          the iPhone? If so, that could mean that the audio is recorded on
-          device and then periodically sent to the phone for transcription. This
-          seems plausible, as Apple provides a Speech API for iOS (link) (link).
+          the phone? If so, that could mean that audio is recorded on device and
+          then periodically sent to the phone for transcription. This seems
+          plausible, as Apple provides a Speech API for iOS.{" "}
+          <InlineLink
+            hideUnderline
+            url="https://developer.apple.com/documentation/speech/"
+            display="[1]"
+          />{" "}
+          <InlineLink
+            hideUnderline
+            url="https://developer.apple.com/videos/play/wwdc2019/256/"
+            display="[2]"
+          />
         </p>
         <br />
         <p>
           The Speech API allows you to run on-device transcriptions from
-          pre-recorded audio files. However, according to Apple, it is not as
+          pre-recorded audio files. According to Apple, however, it's not as
           accurate as a transcription that would run on a server, and can be a
-          battery hog. I could be wrong about this, but I believe it is intended
-          for single speaker transcripts in quite environments, which is unlike
-          how the Friend is expected to be used.
+          drain on battery life. I could be wrong about this, but I believe it's
+          designed for single speaker scenarios in quite environments, which is
+          unlike how the Friend is expected to be used.
         </p>
         <br />
         <p>
@@ -313,31 +322,37 @@ function FriendAlwaysListening() {
         <br />
         <p>
           Another approach would be to transcribe on the iPhone using
-          Whisper.cpp. However, from the repo (link), it looks like it takes 1
-          second to transcribe 4 seconds of audio on an iPhone 13. Too slow to
-        </p>
-        <br />
-        <br />
-        <Subtitle>
-          6. "Periodic Listening" Instead of "Always Listening"
-        </Subtitle>
-        <p>
-          Most of the problems I mentioned above would be solved if Friend only
-          transcribes the past 5 minutes of audio from when you tapped on it. Or
-          if it transcribes randomly throughout the day. But transcribing
-          everything that's recorded is not just expensive but also inconvenient
-          if it comes at the cost of a battery being drained.
+          Whisper.cpp. The benchmarks show that it takes 1 second to transcribe
+          4 seconds of audio on an iPhone 13. That's too slow to be used
+          efficiently as you would have to constantly be transcribing, which
+          again is unsustainable.
         </p>
         <br />
         <br />
         <Title>Closing Thoughts</Title>
+        <p>
+          Most of the problems I mentioned above would be worked out if Friend
+          only transcribes the past 5 minutes of audio from when you tapped on
+          it. Or if it transcribes randomly throughout the day. But transcribing
+          everything that's recorded is not just expensive but also inconvenient
+          if it comes at the cost of draining the battery.
+        </p>
+        <br />
         <p>
           Despite finding holes in every approach, I still believe the Friend
           will always be listening as marketed. I don't doubt what they're
           saying, and wish them the best of luck.
         </p>
         <br />
-        <p>Checkout link btw for a no bullshit product.</p>
+        <p>
+          If you're interesting in a product that isn't overpromising, check out{" "}
+          <InlineLink
+            hideUnderline
+            url="https://getpeachpod.com/"
+            display="🍑 Peach Pod"
+          />
+          .
+        </p>
       </Section>
     </React.Fragment>
   );
