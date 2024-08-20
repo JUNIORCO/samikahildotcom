@@ -5,7 +5,7 @@ import useDocumentMeta from "../hooks/useDocumentMeta";
 import ROUTES from "../routes";
 
 function OnGovernmentLanguage() {
-  const title = "On Government Language ";
+  const title = "On Government Language";
   useDocumentMeta(
     title,
     "It should be no surprise that governments intentionally use complicated, obfuscated language to mask their intentions and confuse the public.",

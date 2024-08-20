@@ -1,21 +1,45 @@
-import type { FC } from "react";
+import type { FC, ReactNode } from "react";
 
 interface QuoteProps {
-  text: string;
-  author: string;
-  source: string;
-  year: number;
+  content?: ReactNode;
+  author?: string;
+  to?: string;
+  toText?: string;
+  year?: number;
 }
 
-const Quote: FC<QuoteProps> = ({ text, author, source, year }) => {
+const Quote: FC<QuoteProps> = ({ content, author, to, toText, year }) => {
   return (
     <div className="mb-8">
-      <blockquote className="border-l-4 border-stone-500 pl-4">
-        "{text}"
-      </blockquote>
-      <blockquote className="text-right">
-        {author}, <span className="italic">{source}</span>, {year}
-      </blockquote>
+      {content && (
+        <blockquote className="border-l-4 border-stone-500 pl-4 font-medium">
+          {content}
+        </blockquote>
+      )}
+      {(author || to || year) && (
+        <blockquote className="text-right">
+          {author && author}
+          {to && toText && (
+            <>
+              {author && ", "}
+              <a
+                href={to}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="italic"
+              >
+                {toText}
+              </a>
+            </>
+          )}
+          {year && (
+            <>
+              {(author || (to && toText)) && ", "}
+              {year}
+            </>
+          )}
+        </blockquote>
+      )}
     </div>
   );
 };

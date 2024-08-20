@@ -1,3 +1,4 @@
+import { MathJaxContext } from "better-react-mathjax";
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import theme from "tailwindcss/colors";
@@ -64,56 +65,58 @@ const PageContainer = () => {
   }, [fontIndex]);
 
   return (
-    <div className="flex justify-center">
-      <div className="w-[42em] my-8 mx-4 justify-center items-center">
-        <p className="text-lg font-medium mb-1 justify-end">
-          Sami Junior Kahil
-        </p>
-        <Outlet />
-        <Section title="Links" containerClassName="mt-6">
-          <a href="mailto:sami.juniorco@gmail.com" className="w-fit">
-            Email
-          </a>
-          <a
-            href="https://twitter.com/samijrco"
-            target="_blank"
-            rel="noreferrer"
-            className="w-fit"
-          >
-            X
-          </a>
-          <a
-            href="https://github.com/JUNIORCO"
-            target="_blank"
-            rel="noreferrer"
-            className="w-fit"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://linkedin.com/in/JUNIORCO"
-            target="_blank"
-            rel="noreferrer"
-            className="w-fit"
-          >
-            LinkedIn
-          </a>
-        </Section>
-        <div className="flex justify-between mt-6">
-          <button type="button" onClick={handleThemeSwitch}>
-            {isDarkMode ? "Light" : "Dark"} Mode
-          </button>
-          <p className="font-satisfy text-lg select-none">junior</p>
-          <select value={fonts[fontIndex]} onChange={handleFontChange}>
-            {fonts.map((font) => (
-              <option key={font} value={font}>
-                {font}
-              </option>
-            ))}
-          </select>
+    <MathJaxContext>
+      <div className="flex justify-center">
+        <div className="w-[42em] my-8 mx-4 justify-center items-center">
+          <p className="text-lg font-medium mb-1 justify-end">
+            Sami Junior Kahil
+          </p>
+          <Outlet />
+          <Section title="Links" containerClassName="mt-6">
+            <a href="mailto:sami.juniorco@gmail.com" className="w-fit">
+              Email
+            </a>
+            <a
+              href="https://twitter.com/samijrco"
+              target="_blank"
+              rel="noreferrer"
+              className="w-fit"
+            >
+              X
+            </a>
+            <a
+              href="https://github.com/JUNIORCO"
+              target="_blank"
+              rel="noreferrer"
+              className="w-fit"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/JUNIORCO"
+              target="_blank"
+              rel="noreferrer"
+              className="w-fit"
+            >
+              LinkedIn
+            </a>
+          </Section>
+          <div className="flex justify-between mt-6">
+            <button type="button" onClick={handleThemeSwitch}>
+              {isDarkMode ? "Light" : "Dark"} Mode
+            </button>
+            <p className="font-satisfy text-lg select-none">junior</p>
+            <select value={fonts[fontIndex]} onChange={handleFontChange}>
+              {fonts.map((font) => (
+                <option key={font} value={font}>
+                  {font}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
-    </div>
+    </MathJaxContext>
   );
 };
 
