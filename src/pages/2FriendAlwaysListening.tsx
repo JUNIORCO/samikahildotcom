@@ -46,6 +46,7 @@ function FriendAlwaysListening() {
           engineering behind the always listening feature of Friend.
         </p>
         <Divider />
+        <br />
         <p>
           Friend says that their device is always listening. From the website:
         </p>
@@ -63,6 +64,7 @@ function FriendAlwaysListening() {
           financial perspective.
         </p>
         <br />
+        <br />
         <Title>Assumptions</Title>
         <p>
           Assume Friend sells 10,000 devices in this initial batch. Each device
@@ -77,8 +79,10 @@ function FriendAlwaysListening() {
           <span className="font-bold">2.4 million minutes a day</span>.
         </p>
         <br />
+        <br />
         <Title>Approaches</Title>
         <p>Let's go through 6 ways to build always listening.</p>
+        <br />
         <br />
         <Subtitle>1. On-Device Transcription</Subtitle>
         <p>
@@ -90,6 +94,7 @@ function FriendAlwaysListening() {
           maintaining a low word error rate, or processing the audio fast
           enough.
         </p>
+        <br />
         <br />
         <Subtitle>2. Cloud Services</Subtitle>
         <p>
@@ -108,6 +113,7 @@ function FriendAlwaysListening() {
           cannot work.
         </p>
         <br />
+        <br />
         <Subtitle>3. Self Hosted Whisper</Subtitle>
         <p>
           Let's try running Whisper, a popular speech to text model, on our own
@@ -121,6 +127,7 @@ function FriendAlwaysListening() {
           transcribing a <span className="font-bold">20 minute audio file</span>{" "}
           on a <span className="font-bold">single A100 40GB</span>:
         </p>
+        <br />
         <br />
         <Table>
           <TableHeader>
@@ -162,6 +169,7 @@ function FriendAlwaysListening() {
             </TableRow>
           </TableBody>
         </Table>
+        <br />
         <br />
         <p>
           The peak GPU utilization is high, which means that each GPU can only
@@ -225,6 +233,7 @@ function FriendAlwaysListening() {
           waffle”).
         </p>
         <br />
+        <br />
         <Subtitle>4. Self Hosted CPUs</Subtitle>
         <p>
           You could run Whisper.cpp or Faster-Whisper on regular servers without
@@ -267,6 +276,7 @@ function FriendAlwaysListening() {
           <span className="font-bold">$365,000 per year</span>, which is still
           not the case and.
         </p>
+        <br />
         <br />
         <Subtitle>5. Transcribe on iPhone</Subtitle>
         <p>
@@ -316,7 +326,10 @@ function FriendAlwaysListening() {
           second to transcribe 4 seconds of audio on an iPhone 13. Too slow to
         </p>
         <br />
-        <Subtitle>6. "Periodic Listening"</Subtitle>
+        <br />
+        <Subtitle>
+          6. "Periodic Listening" Instead of "Always Listening"
+        </Subtitle>
         <p>
           Most of the problems I mentioned above would be solved if Friend only
           transcribes the past 5 minutes of audio from when you tapped on it. Or
@@ -324,6 +337,7 @@ function FriendAlwaysListening() {
           everything that's recorded is not just expensive but also inconvenient
           if it comes at the cost of a battery being drained.
         </p>
+        <br />
         <br />
         <Title>Closing Thoughts</Title>
         <p>
