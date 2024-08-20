@@ -1,7 +1,7 @@
 export function Table({ children }: { children: React.ReactNode }) {
   return (
     <div className="overflow-x-auto">
-      <table className="table-auto w-[96%] md:w-full">{children}</table>
+      <table className="table-auto w-[92%] md:w-full">{children}</table>
     </div>
   );
 }
