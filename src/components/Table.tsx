@@ -65,7 +65,7 @@ export function TableCell({
   isInitialColumn = false,
 }: TableCellProps) {
   const baseClassName = "whitespace-nowrap min-h-[40px]";
-  const fontWeightClass = isInitialColumn ? "font-semibold" : "";
+  const fontWeightClass = isInitialColumn ? "font-semibold pl-4" : "";
   const finalClassName = `${baseClassName} ${fontWeightClass} ${className}`;
 
   return <td className={finalClassName}>{children}</td>;

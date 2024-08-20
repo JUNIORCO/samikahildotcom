@@ -12,10 +12,10 @@ const PageContainer = () => {
   const themeKey = "theme";
   const fontKey = "font";
   const initialTheme = localStorage.getItem(themeKey) === Themes.dark;
-  const initialFont = localStorage.getItem(fontKey) || "Times New Roman";
+  const initialFont = localStorage.getItem(fontKey) || "Georgia";
   const [isDarkMode, setIsDarkMode] = useState<boolean>(initialTheme);
 
-  const fonts = ["Times", "Arial", "Georgia", "Verdana"];
+  const fonts = ["Georgia", "Times", "Arial", "Verdana"];
   const initialFontIndex = fonts.indexOf(initialFont);
   const [fontIndex, setFontIndex] = useState<number>(initialFontIndex);
 
