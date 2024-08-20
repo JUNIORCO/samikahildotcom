@@ -23,6 +23,19 @@
     
     <!-- Title -->
     <title>Sami Junior Kahil</title>
+
+    <!-- Dark Mode Prevent Flicker -->
+    <script>
+      (function() {
+        try {
+          if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (_) {}
+      })();
+    </script>
   </head>
   <body>
     <root id="root"></root>
