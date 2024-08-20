@@ -1,15 +1,11 @@
 export function Table({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="overflow-x-auto">
-      <table className="table-auto w-[92%] md:w-full">{children}</table>
-    </div>
-  );
+  return <table className="table-auto">{children}</table>;
 }
 
 export function TableHeader({ children }: { children: React.ReactNode }) {
   return (
     <thead className="border-b-4 border-stone-300 dark:border-stone-700">
-      <tr>{children}</tr>
+      <tr className="h-10">{children}</tr>
     </thead>
   );
 }
@@ -35,7 +31,7 @@ export function TableRow({
   const bgColorClass = altBackground
     ? "bg-stone-100 dark:bg-stone-800"
     : "bg-stone-50 dark:bg-stone-900";
-  return <tr className={`${borderClass} ${bgColorClass}`}>{children}</tr>;
+  return <tr className={`h-10 ${borderClass} ${bgColorClass}`}>{children}</tr>;
 }
 
 interface TableHeaderCellProps {
@@ -47,7 +43,7 @@ export function TableHeaderCell({
   children,
   className = "",
 }: TableHeaderCellProps) {
-  const baseClassName = "px-4 py-2 text-start font-semibold";
+  const baseClassName = "text-start font-semibold";
   const finalClassName = `${baseClassName} ${className}`;
 
   return (
@@ -68,7 +64,7 @@ export function TableCell({
   className = "",
   isInitialColumn = false,
 }: TableCellProps) {
-  const baseClassName = "px-4 py-2 whitespace-nowrap";
+  const baseClassName = "whitespace-nowrap min-h-[40px]";
   const fontWeightClass = isInitialColumn ? "font-semibold" : "";
   const finalClassName = `${baseClassName} ${fontWeightClass} ${className}`;
 

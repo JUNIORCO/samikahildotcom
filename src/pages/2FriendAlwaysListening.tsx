@@ -292,9 +292,7 @@ function FriendAlwaysListening() {
           Does the always listening feature require a bluetooth connection to
           the iPhone? If so, that could mean that the audio is recorded on
           device and then periodically sent to the phone for transcription. This
-          seems plausible, as Apple provides a Speech API for iOS
-          (https://developer.apple.com/documentation/speech/)
-          (https://developer.apple.com/videos/play/wwdc2019/256/).
+          seems plausible, as Apple provides a Speech API for iOS (link) (link).
         </p>
         <br />
         <p>
@@ -314,10 +312,8 @@ function FriendAlwaysListening() {
         <br />
         <p>
           Another approach would be to transcribe on the iPhone using
-          Whisper.cpp. However, from the repo
-          (https://github.com/ggerganov/whisper.cpp?tab=readme-ov-file), it
-          looks like it takes 1 second to transcribe 4 seconds of audio on an
-          iPhone 13. Too slow to
+          Whisper.cpp. However, from the repo (link), it looks like it takes 1
+          second to transcribe 4 seconds of audio on an iPhone 13. Too slow to
         </p>
         <br />
         <Subtitle>6. "Periodic Listening"</Subtitle>
@@ -336,7 +332,7 @@ function FriendAlwaysListening() {
           saying, and wish them the best of luck.
         </p>
         <br />
-        <p>Checkout https://getpeachpod.com btw for a no bullshit product.</p>
+        <p>Checkout link btw for a no bullshit product.</p>
       </Section>
     </React.Fragment>
   );
