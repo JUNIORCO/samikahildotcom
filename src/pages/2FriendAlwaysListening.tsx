@@ -5,6 +5,14 @@ import Divider from "../components/Divider";
 import Quote from "../components/Quote";
 import Section from "../components/Section";
 import Subtitle from "../components/Subtitle";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHeader,
+  TableHeaderCell,
+  TableRow,
+} from "../components/Table";
 import Title from "../components/Title";
 import useDocumentMeta from "../hooks/useDocumentMeta";
 import ROUTES from "../routes";
@@ -114,6 +122,46 @@ function FriendAlwaysListening() {
           on a <span className="font-bold">single A100 40GB</span>:
         </p>
         <br />
+        <Table>
+          <TableHeader>
+            <TableHeaderCell />
+            <TableHeaderCell>Run 1</TableHeaderCell>
+            <TableHeaderCell>Run 2</TableHeaderCell>
+            <TableHeaderCell>Run 3</TableHeaderCell>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell isInitialColumn>Model</TableCell>
+              <TableCell>large-v2</TableCell>
+              <TableCell>tiny.en</TableCell>
+              <TableCell>tiny.en</TableCell>
+            </TableRow>
+            <TableRow altBackground>
+              <TableCell isInitialColumn>Batch Size</TableCell>
+              <TableCell>16</TableCell>
+              <TableCell>16</TableCell>
+              <TableCell>1</TableCell>
+            </TableRow>
+            <TableRow bottomBorder>
+              <TableCell isInitialColumn>Precision</TableCell>
+              <TableCell>float16</TableCell>
+              <TableCell>int8</TableCell>
+              <TableCell>int8</TableCell>
+            </TableRow>
+            <TableRow altBackground>
+              <TableCell isInitialColumn>Time</TableCell>
+              <TableCell>15s</TableCell>
+              <TableCell>5s</TableCell>
+              <TableCell>10s</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell isInitialColumn>Peak GPU Utilization</TableCell>
+              <TableCell>100%</TableCell>
+              <TableCell>84%</TableCell>
+              <TableCell>84%</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
         <br />
         <p>
           The peak GPU utilization is high, which means that each GPU can only
@@ -137,18 +185,14 @@ function FriendAlwaysListening() {
         <br />
         <p>
           From Run 1, a single GPU can process 20-minute transcriptions per hour{" "}
-          <MathJax inline>
-            {"\\(\\frac{3,600 \\text{ sec/hr}}{15 \\text{ sec}} = 240\\)"}
-          </MathJax>{" "}
-          20 minute chunks per hour.
+          <MathJax inline>{"\\(\\frac{3,600}{15} = 240\\)"}</MathJax> 20 minute
+          chunks per hour.
         </p>
         <br />
         <p>
           10,000 users each transcribing 4 hours of audio a day is equal to{" "}
           <MathJax inline>
-            {
-              "\\(\\frac{10,000 \\text{ users} \\times 4 \\text{ hrs/day}}{24 \\text{ hrs / day}} \\approx 1,666\\)"
-            }
+            {"\\(\\frac{10,000 \\times 4}{24} \\approx 1,666\\)"}
           </MathJax>{" "}
           hours of audio needed to be transcribed per hour.
         </p>
@@ -199,10 +243,8 @@ function FriendAlwaysListening() {
         <br />
         <p>
           So a single instance can process{" "}
-          <MathJax inline>
-            {"\\(\\frac{3,600 \\text{ sec/hr}}{300 \\text{ sec}} = 12\\)"}
-          </MathJax>{" "}
-          20-minute transcriptions per hour.
+          <MathJax inline>{"\\(\\frac{3,600}{300} = 12\\)"}</MathJax> 20-minute
+          transcriptions per hour.
         </p>
         <br />
         <p>
