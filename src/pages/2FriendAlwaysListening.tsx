@@ -18,7 +18,7 @@ import useDocumentMeta from "../hooks/useDocumentMeta";
 import ROUTES from "../routes";
 
 function FriendAlwaysListening() {
-  const title = "Friend's “Always Listening”";
+  const title = "Friend's “Always Listening” Feature is Sketchy";
   useDocumentMeta(
     title,
     "It could cost as much as $20 per user per year to power always listening for Friend.",
@@ -122,46 +122,6 @@ function FriendAlwaysListening() {
           on a <span className="font-bold">single A100 40GB</span>:
         </p>
         <br />
-        <Table>
-          <TableHeader>
-            <TableHeaderCell />
-            <TableHeaderCell>Run 1</TableHeaderCell>
-            <TableHeaderCell>Run 2</TableHeaderCell>
-            <TableHeaderCell>Run 3</TableHeaderCell>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell isInitialColumn>Model</TableCell>
-              <TableCell>large-v2</TableCell>
-              <TableCell>tiny.en</TableCell>
-              <TableCell>tiny.en</TableCell>
-            </TableRow>
-            <TableRow altBackground>
-              <TableCell isInitialColumn>Batch Size</TableCell>
-              <TableCell>16</TableCell>
-              <TableCell>16</TableCell>
-              <TableCell>1</TableCell>
-            </TableRow>
-            <TableRow bottomBorder>
-              <TableCell isInitialColumn>Precision</TableCell>
-              <TableCell>float16</TableCell>
-              <TableCell>int8</TableCell>
-              <TableCell>int8</TableCell>
-            </TableRow>
-            <TableRow altBackground>
-              <TableCell isInitialColumn>Time</TableCell>
-              <TableCell>15s</TableCell>
-              <TableCell>5s</TableCell>
-              <TableCell>10s</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell isInitialColumn>Peak GPU Utilization</TableCell>
-              <TableCell>100%</TableCell>
-              <TableCell>84%</TableCell>
-              <TableCell>84%</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
         <br />
         <p>
           The peak GPU utilization is high, which means that each GPU can only
