@@ -5,14 +5,6 @@ import Divider from "../components/Divider";
 import Quote from "../components/Quote";
 import Section from "../components/Section";
 import Subtitle from "../components/Subtitle";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHeader,
-  TableHeaderCell,
-  TableRow,
-} from "../components/Table";
 import Title from "../components/Title";
 import useDocumentMeta from "../hooks/useDocumentMeta";
 import ROUTES from "../routes";
