@@ -250,7 +250,8 @@ function FriendAlwaysListening() {
         </p>
         <br />
         <p>
-          With the same calculations as section 3, the number of GPUs needed is{" "}
+          With the same calculations as section 3, the number of servers needed
+          is{" "}
           <MathJax inline>{"\\(= \\frac{5,000}{12} \\approx 417\\)"}</MathJax>
           {"."}
         </p>
