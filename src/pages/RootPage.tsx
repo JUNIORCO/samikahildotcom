@@ -37,15 +37,8 @@ function RootPage() {
                 rel="noreferrer"
               >
                 MonteloAI
-              </a>{" "}
-              and{" "}
-              <a
-                href="https://getpeachpod.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Peach.
               </a>
+              .
             </li>
             <li>Applied to YC, interviewed, failed</li>
           </ul>
